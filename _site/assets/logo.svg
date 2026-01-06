@@ -1,0 +1,229 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient for neural network -->
+    <linearGradient id="neuralGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4f46e5;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#7c3aed;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient for attack vectors -->
+    <radialGradient id="attackGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:0.9" />
+      <stop offset="70%" style="stop-color:#b91c1c;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#991b1b;stop-opacity:0.3" />
+    </radialGradient>
+    
+    <!-- Gradient for data streams -->
+    <linearGradient id="dataGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.4" />
+    </linearGradient>
+    
+    <!-- Filter for glow effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Filter for strong glow -->
+    <filter id="strongGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="190" fill="#0f172a" stroke="url(#neuralGrad)" stroke-width="4"/>
+  
+  <!-- Training data streams flowing into the model -->
+  <g opacity="0.7">
+    <!-- Left side data streams -->
+    <rect x="30" y="180" width="6" height="12" fill="url(#dataGrad)" rx="3">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="40" y="170" width="6" height="16" fill="url(#dataGrad)" rx="3">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="50" y="190" width="6" height="10" fill="url(#dataGrad)" rx="3">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2.2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="60" y="175" width="6" height="14" fill="url(#dataGrad)" rx="3">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="1.9s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Right side data streams -->
+    <rect x="340" y="185" width="6" height="10" fill="url(#dataGrad)" rx="3">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="1.9s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="350" y="175" width="6" height="12" fill="url(#dataGrad)" rx="3">
+      <animate attributeName="opacity" values="1;0.4;1" dur="2.1s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="360" y="195" width="6" height="8" fill="url(#dataGrad)" rx="3">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.7s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Top data streams -->
+    <rect x="190" y="30" width="10" height="6" fill="url(#dataGrad)" rx="3">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2.3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="210" y="40" width="12" height="6" fill="url(#dataGrad)" rx="3">
+      <animate attributeName="opacity" values="0.8;0.4;0.8" dur="1.6s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Large Language Model - Multi-layer neural network -->
+  <g filter="url(#glow)">
+    <!-- Input layer -->
+    <circle cx="120" cy="150" r="8" fill="url(#neuralGrad)" stroke="#64748b" stroke-width="1">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="120" cy="180" r="8" fill="url(#neuralGrad)" stroke="#64748b" stroke-width="1">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="120" cy="210" r="8" fill="url(#neuralGrad)" stroke="#64748b" stroke-width="1">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="120" cy="240" r="8" fill="url(#neuralGrad)" stroke="#64748b" stroke-width="1">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2.1s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Hidden layer 1 -->
+    <circle cx="170" cy="130" r="10" fill="url(#neuralGrad)" stroke="#64748b" stroke-width="1">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="170" cy="165" r="10" fill="url(#neuralGrad)" stroke="#64748b" stroke-width="1">
+      <animate attributeName="opacity" values="0.9;1;0.9" dur="2.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="170" cy="200" r="10" fill="url(#neuralGrad)" stroke="#64748b" stroke-width="1">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="1.7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="170" cy="235" r="10" fill="url(#neuralGrad)" stroke="#64748b" stroke-width="1">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="170" cy="270" r="10" fill="url(#neuralGrad)" stroke="#64748b" stroke-width="1">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Hidden layer 2 (center) -->
+    <circle cx="230" cy="140" r="12" fill="url(#neuralGrad)" stroke="#64748b" stroke-width="1">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2.1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="230" cy="180" r="12" fill="url(#neuralGrad)" stroke="#64748b" stroke-width="1">
+      <animate attributeName="opacity" values="1;0.8;1" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="230" cy="220" r="12" fill="url(#neuralGrad)" stroke="#64748b" stroke-width="1">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="230" cy="260" r="12" fill="url(#neuralGrad)" stroke="#64748b" stroke-width="1">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="1.9s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Hidden layer 3 -->
+    <circle cx="280" cy="150" r="10" fill="url(#neuralGrad)" stroke="#64748b" stroke-width="1">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="280" cy="185" r="10" fill="url(#neuralGrad)" stroke="#64748b" stroke-width="1">
+      <animate attributeName="opacity" values="0.9;1;0.9" dur="1.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="280" cy="220" r="10" fill="url(#neuralGrad)" stroke="#64748b" stroke-width="1">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="280" cy="255" r="10" fill="url(#neuralGrad)" stroke="#64748b" stroke-width="1">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Output layer -->
+    <circle cx="330" cy="180" r="8" fill="url(#neuralGrad)" stroke="#64748b" stroke-width="1">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2.1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="330" cy="210" r="8" fill="url(#neuralGrad)" stroke="#64748b" stroke-width="1">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="330" cy="240" r="8" fill="url(#neuralGrad)" stroke="#64748b" stroke-width="1">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Connection lines between layers -->
+  <g opacity="0.3">
+    <!-- Input to Hidden 1 -->
+    <line x1="128" y1="150" x2="162" y2="130" stroke="#64748b" stroke-width="1"/>
+    <line x1="128" y1="180" x2="162" y2="165" stroke="#64748b" stroke-width="1"/>
+    <line x1="128" y1="210" x2="162" y2="200" stroke="#64748b" stroke-width="1"/>
+    <line x1="128" y1="240" x2="162" y2="270" stroke="#64748b" stroke-width="1"/>
+    
+    <!-- Hidden 1 to Hidden 2 -->
+    <line x1="180" y1="165" x2="218" y2="180" stroke="#64748b" stroke-width="1"/>
+    <line x1="180" y1="200" x2="218" y2="220" stroke="#64748b" stroke-width="1"/>
+    <line x1="180" y1="235" x2="218" y2="260" stroke="#64748b" stroke-width="1"/>
+    
+    <!-- Hidden 2 to Hidden 3 -->
+    <line x1="242" y1="180" x2="270" y2="185" stroke="#64748b" stroke-width="1"/>
+    <line x1="242" y1="220" x2="270" y2="220" stroke="#64748b" stroke-width="1"/>
+    <line x1="242" y1="260" x2="270" y2="255" stroke="#64748b" stroke-width="1"/>
+    
+    <!-- Hidden 3 to Output -->
+    <line x1="290" y1="185" x2="322" y2="180" stroke="#64748b" stroke-width="1"/>
+    <line x1="290" y1="220" x2="322" y2="210" stroke="#64748b" stroke-width="1"/>
+    <line x1="290" y1="255" x2="322" y2="240" stroke="#64748b" stroke-width="1"/>
+  </g>
+  
+  <!-- Membership inference attack indicators -->
+  <g filter="url(#strongGlow)">
+    <!-- Attack probes targeting specific neurons -->
+    <circle cx="170" cy="165" r="4" fill="url(#attackGrad)" opacity="0">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="4;8;4" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="230" cy="180" r="4" fill="url(#attackGrad)" opacity="0">
+      <animate attributeName="opacity" values="0;1;0" dur="1.8s" repeatCount="indefinite" begin="0.3s"/>
+      <animate attributeName="r" values="4;8;4" dur="1.8s" repeatCount="indefinite" begin="0.3s"/>
+    </circle>
+    <circle cx="280" cy="220" r="4" fill="url(#attackGrad)" opacity="0">
+      <animate attributeName="opacity" values="0;1;0" dur="1.6s" repeatCount="indefinite" begin="0.6s"/>
+      <animate attributeName="r" values="4;8;4" dur="1.6s" repeatCount="indefinite" begin="0.6s"/>
+    </circle>
+  </g>
+  
+  <!-- Membership inference query signals -->
+  <g opacity="0.8">
+    <!-- Query signals coming from different angles -->
+    <circle cx="100" cy="100" r="3" fill="#ef4444">
+      <animate attributeName="r" values="3;6;3" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="350" cy="120" r="3" fill="#ef4444">
+      <animate attributeName="r" values="3;6;3" dur="2.3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="320" cy="320" r="3" fill="#ef4444">
+      <animate attributeName="r" values="3;6;3" dur="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="80" cy="300" r="3" fill="#ef4444">
+      <animate attributeName="r" values="3;6;3" dur="2.1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2.1s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Data extraction/inference visualization -->
+  <g opacity="0.6">
+    <!-- Pulsing rings around attacked neurons -->
+    <circle cx="230" cy="180" r="20" fill="none" stroke="#dc2626" stroke-width="2" opacity="0">
+      <animate attributeName="opacity" values="0;0.7;0" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="15;25;15" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="170" cy="200" r="18" fill="none" stroke="#dc2626" stroke-width="2" opacity="0">
+      <animate attributeName="opacity" values="0;0.6;0" dur="2.8s" repeatCount="indefinite" begin="0.5s"/>
+      <animate attributeName="r" values="12;22;12" dur="2.8s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+  </g>
+</svg>

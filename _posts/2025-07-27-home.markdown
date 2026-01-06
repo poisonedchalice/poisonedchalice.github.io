@@ -1,0 +1,73 @@
+---
+layout: page2
+title: "About"
+date:   2025-07-27 11:47:08 +0200
+categories: jekyll update
+permalink: /
+hidden: true 
+---
+
+#### Background
+
+LLMs often exhibit [memorization](https://arxiv.org/pdf/2312.11658), reproducing verbatim content from their training data. This poses a challenge for evaluation, if test data was seen during training, performance metrics become unreliable due to data contamination, which can falsely suggest better generalization.
+
+For models with publicly available training data, contamination can be reduced by deduplicating the test set against the training corpus, a strategy we used in building [The Heap](https://arxiv.org/pdf/2501.09653), a benchmark dataset for evaluating LLMs on code tasks.
+
+However, this approach is not feasible for closed-source models. In such cases, we need alternative methods to assess whether a test file may have been part of the training data.
+
+One approach is to adapt [membership inference techniques](https://arxiv.org/pdf/2501.17501), which exploit a model’s tendency to memorize training data to determine whether a specific input was part of the training set. These methods can be used to assess the likelihood that a test file was seen during training.
+
+
+#### Goal 
+
+Develop techniques that can detect data contamination in language models that do not publicly release their training data.
+
+#### Objective 
+
+This competition invites participants to develop and improve techniques for membership inference in LLMs4Code. Given a dataset composed of a mixture of files, some belonging to a target model’s training data and others not, participants will design techniques to classify each file accordingly.
+
+Submissions will be evaluated on accuracy using a held-out test set, and their ability to generalize by evaluating the techniques on a held out test model. Finally, we provide a baseline for the contestant to compare their results to.
+
+#### Baselines
+
+We provide four baseline Membership Inference Attacks (MIAs) as reference implementations: [Loss](https://arxiv.org/pdf/1709.01604), [MinK%Prob](https://arxiv.org/pdf/2310.16789), [SURP](https://arxiv.org/pdf/2405.11930), and [PAC](https://arxiv.org/pdf/2407.21248).
+
+Each baseline applies a distinct technique to infer whether a given sample was part of a model’s training dataset. For detailed explanations of the underlying methods, we refer the reader to the corresponding original publications.
+
+The reference implementations were developed by Cosmin Vasilescu, Ísak Jónsson, and Roham Koohestani as part of the Research Project course (CSE3000) at TU Delft. Each attack extends an abstract MIAttack class. You may reuse this structure or any part of the provided implementations; however, doing so is not mandatory.
+
+**GitHub repository: To be announced.**
+
+#### Impact 
+
+We will use the most generalizable and accurate method from the competition to audit The Heap dataset, to detect and label potential training data overlaps with closed models. This results in a stronger, contamination-free benchmark for the community. The competition will:
+
+- Encourage the development of practical tools to assess contamination in data-opaque models.
+- Spark discussion on best practices for LLM4Code research with undisclosed training data.
+- Promote transparency and reproducibility in LLM4Code evaluation.
+
+
+<!-- 
+You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+
+Jekyll requires blog post files to be named according to the following format:
+
+`YEAR-MONTH-DAY-title.MARKUP`
+
+Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+
+Jekyll also offers powerful support for code snippets:
+
+{% highlight ruby %}
+def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=> prints 'Hi, Tom' to STDOUT.
+{% endhighlight %}
+
+Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/ -->

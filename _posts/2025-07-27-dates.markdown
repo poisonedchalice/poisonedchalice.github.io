@@ -1,0 +1,16 @@
+---
+layout: page
+title:  Important Dates
+date:   2025-07-27 11:47:08 +0200
+categories: jekyll update
+permalink: /dates
+hidden: true 
+---
+
+- **Submission Deadline:** 17 March 2026 AOE
+- **Initial Notifications/Revisions:** 24 March 2026 AOE
+- **Participants Camera Ready:** 31 March 2026 AOE 
+- **FSE-AIWare Competition Camera Ready:** 2 April 2026 AOE 
+- **Organizers Report Camera Ready:** 9 April 2026 AOE 
+- **Competition Date:** 6 July 2026 AOE
+

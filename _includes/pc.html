@@ -1,0 +1,15 @@
+ <div style="text-align: center; max-width: 180px;">
+    <img src="{{ site.baseurl }}{{include.image}}" alt="{{include.alt}}" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; display: block; margin: 0 auto; transition: box-shadow 0.4s ease; cursor: pointer;"
+  onmouseover="this.style.boxShadow='0 0 12px 3px rgb(149, 64, 246)'" 
+  onmouseout="this.style.boxShadow='none'" />
+        <p style="margin: 0.3rem 0 0.5rem 0; font-size: 1rem;">{{include.name}}</p>
+    <p style="margin: 0.2rem 0 0.5rem 0; font-style: italic; font-size: 0.8rem;">{{include.institution}}</p>
+    <div style="display: flex; justify-content: center; gap: 10px;">
+      <a href="{{include.website}}" aria-label="{{include.websitearia}}" target="_blank" rel="noopener noreferrer">
+        <img src="{{ site.baseurl }}{{include.websiteimage}}" alt="{{include.sitealt}}" style="width: 20px; height: 20px;" />
+      </a>
+       <a href="{{include.website2}}" aria-label="{{include.websitearia2}}" target="_blank" rel="noopener noreferrer">
+        <img src="{{ site.baseurl }}{{include.websiteimage2}}" alt="{{include.sitealt2}}" style="width: 20px; height: 20px;" />
+      </a>
+    </div>
+  </div>

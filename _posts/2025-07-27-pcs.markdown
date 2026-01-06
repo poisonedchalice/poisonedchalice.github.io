@@ -1,0 +1,80 @@
+---
+layout: page2
+title:
+date:   2025-07-27 11:47:08 +0200
+categories: jekyll update
+permalink: /pcs
+hidden: true 
+---
+
+<h1 style="text-align: center;">Program Committee Chair</h1>
+
+<div class="team-member" style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-bottom: 2rem;">
+
+{% include pc.html
+   image="/assets/zhouyang.png"
+   alt="Zhou Yang"
+   name="Zhou Yang"
+   institution="University of Alberta - Assistant Professor <br> Fellow @ Amii"
+   website="https://homepage.zhouyang.me/"
+   websitearia="Website" 
+   websitealt="Website"
+   websiteimage="/assets/website.svg"
+   website2="https://www.linkedin.com/in/zhou-yang-592b21159/" 
+   websitearia2="LinkedIn" 
+   websitealt2="LinkedIn"
+   websiteimage2="/assets/linkedin.svg"
+%}
+
+</div>
+
+<h1 style="text-align: center;">Program Committee</h1>
+
+<div class="team-member" style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem;">
+
+  {% include pc.html
+   image="/assets/roham.webp"
+   alt="Roham Koohestani"
+   name="Roham Koohestani"
+   institution="Delft University of Technology - AISE Lab"
+   website="https://rohamkoohestani.com/"
+   websitearia="Website" 
+   websitealt="Website"
+   websiteimage="/assets/website.svg"
+   website2="https://www.linkedin.com/in/rohamkoohestani" 
+   websitearia2="LinkedIn" 
+   websitealt2="LinkedIn"
+   websiteimage2="/assets/linkedin.svg" 
+%}
+
+  {% include pc.html
+   image="/assets/ziyou.webp"
+   alt="Ziyou Li"
+   name="Ziyou Li"
+   institution="Delft University of Technology - AISE Lab"
+   website="https://ziyou.li/"
+   websitearia="Website" 
+   websitealt="Website"
+   websiteimage="/assets/website.svg"
+   website2="https://www.linkedin.com/in/ziyouli/" 
+   websitearia2="LinkedIn" 
+   websitealt2="LinkedIn"
+   websiteimage2="/assets/linkedin.svg" 
+%}
+
+{% include pc.html
+   image="/assets/daniele.webp"
+   alt="Daniele Cipollone"
+   name="Daniele Cipollone"
+   institution="Delft University of Technology - AISE Lab"
+   website="https://scholar.google.com/citations?user=JWqRtYQAAAAJ&hl=en"
+   websitearia="Google Scholar" 
+   websitealt="Google Scholar"
+   websiteimage="/assets/scholar.svg"
+   website2="https://www.linkedin.com/in/dancip00/" 
+   websitearia2="LinkedIn" 
+   websitealt2="LinkedIn"
+   websiteimage2="/assets/linkedin.svg" 
+%}
+
+</div>

@@ -1,0 +1,10 @@
+---
+layout: page2
+title: 
+date:   2025-07-27 11:47:08 +0200
+categories: jekyll update
+permalink: /program
+hidden: true 
+---
+
+The competition program is available on the [FSE 2026 website](https://conf.researchr.org/home/fse-2026).

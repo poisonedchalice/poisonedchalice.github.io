@@ -1,0 +1,8 @@
+---
+layout: page
+title:  Soon
+date:   2025-07-27 11:47:08 +0200
+categories: jekyll update
+permalink: /speakers
+hidden: true 
+---

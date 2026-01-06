@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-01-06T12:43:53+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Poisoned Chalice Competition 2026</title><subtitle>Follow us on social media: </subtitle><entry><title type="html">Soon</title><link href="http://localhost:4000/sponsors" rel="alternate" type="text/html" title="Soon" /><published>2025-07-27T11:47:08+02:00</published><updated>2025-07-27T11:47:08+02:00</updated><id>http://localhost:4000/sponsors</id><content type="html" xml:base="http://localhost:4000/sponsors"><![CDATA[]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Important Dates</title><link href="http://localhost:4000/dates" rel="alternate" type="text/html" title="Important Dates" /><published>2025-07-27T11:47:08+02:00</published><updated>2025-07-27T11:47:08+02:00</updated><id>http://localhost:4000/dates</id><content type="html" xml:base="http://localhost:4000/dates"><![CDATA[<ul>
+  <li><strong>Submission Deadline:</strong> 17 March 2026 AOE</li>
+  <li><strong>Initial Notifications/Revisions:</strong> 24 March 2026 AOE</li>
+  <li><strong>Participants Camera Ready:</strong> 31 March 2026 AOE</li>
+  <li><strong>FSE-AIWare Competition Camera Ready:</strong> 2 April 2026 AOE</li>
+  <li><strong>Organizers Report Camera Ready:</strong> 9 April 2026 AOE</li>
+  <li><strong>Competition Date:</strong> 6 July 2026 AOE</li>
+</ul>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[Submission Deadline: 17 March 2026 AOE Initial Notifications/Revisions: 24 March 2026 AOE Participants Camera Ready: 31 March 2026 AOE FSE-AIWare Competition Camera Ready: 2 April 2026 AOE Organizers Report Camera Ready: 9 April 2026 AOE Competition Date: 6 July 2026 AOE]]></summary></entry><entry><title type="html">About</title><link href="http://localhost:4000/" rel="alternate" type="text/html" title="About" /><published>2025-07-27T11:47:08+02:00</published><updated>2025-07-27T11:47:08+02:00</updated><id>http://localhost:4000/home</id><content type="html" xml:base="http://localhost:4000/"><![CDATA[<h4 id="background">Background</h4>
+
+<p>LLMs often exhibit <a href="https://arxiv.org/pdf/2312.11658">memorization</a>, reproducing verbatim content from their training data. This poses a challenge for evaluation, if test data was seen during training, performance metrics become unreliable due to data contamination, which can falsely suggest better generalization.</p>
+
+<p>For models with publicly available training data, contamination can be reduced by deduplicating the test set against the training corpus, a strategy we used in building <a href="https://arxiv.org/pdf/2501.09653">The Heap</a>, a benchmark dataset for evaluating LLMs on code tasks.</p>
+
+<p>However, this approach is not feasible for closed-source models. In such cases, we need alternative methods to assess whether a test file may have been part of the training data.</p>
+
+<p>One approach is to adapt <a href="https://arxiv.org/pdf/2501.17501">membership inference techniques</a>, which exploit a model’s tendency to memorize training data to determine whether a specific input was part of the training set. These methods can be used to assess the likelihood that a test file was seen during training.</p>
+
+<h4 id="goal">Goal</h4>
+
+<p>Develop techniques that can detect data contamination in language models that do not publicly release their training data.</p>
+
+<h4 id="objective">Objective</h4>
+
+<p>This competition invites participants to develop and improve techniques for membership inference in LLMs4Code. Given a dataset composed of a mixture of files, some belonging to a target model’s training data and others not, participants will design techniques to classify each file accordingly.</p>
+
+<p>Submissions will be evaluated on accuracy using a held-out test set, and their ability to generalize by evaluating the techniques on a held out test model. Finally, we provide a baseline for the contestant to compare their results to.</p>
+
+<h4 id="baselines">Baselines</h4>
+
+<p>We provide four baseline Membership Inference Attacks (MIAs) as reference implementations: <a href="https://arxiv.org/pdf/1709.01604">Loss</a>, <a href="https://arxiv.org/pdf/2310.16789">MinK%Prob</a>, <a href="https://arxiv.org/pdf/2405.11930">SURP</a>, and <a href="https://arxiv.org/pdf/2407.21248">PAC</a>.</p>
+
+<p>Each baseline applies a distinct technique to infer whether a given sample was part of a model’s training dataset. For detailed explanations of the underlying methods, we refer the reader to the corresponding original publications.</p>
+
+<p>The reference implementations were developed by Cosmin Vasilescu, Ísak Jónsson, and Roham Koohestani as part of the Research Project course (CSE3000) at TU Delft. Each attack extends an abstract MIAttack class. You may reuse this structure or any part of the provided implementations; however, doing so is not mandatory.</p>
+
+<p><strong>GitHub repository: To be announced.</strong></p>
+
+<h4 id="impact">Impact</h4>
+
+<p>We will use the most generalizable and accurate method from the competition to audit The Heap dataset, to detect and label potential training data overlaps with closed models. This results in a stronger, contamination-free benchmark for the community. The competition will:</p>
+
+<ul>
+  <li>Encourage the development of practical tools to assess contamination in data-opaque models.</li>
+  <li>Spark discussion on best practices for LLM4Code research with undisclosed training data.</li>
+  <li>Promote transparency and reproducibility in LLM4Code evaluation.</li>
+</ul>
+
+<!-- 
+You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+
+Jekyll requires blog post files to be named according to the following format:
+
+`YEAR-MONTH-DAY-title.MARKUP`
+
+Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+
+Jekyll also offers powerful support for code snippets:
+
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+
+
+Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/ -->]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[Background]]></summary></entry><entry><title type="html">Organization</title><link href="http://localhost:4000/organization" rel="alternate" type="text/html" title="Organization" /><published>2025-07-27T11:47:08+02:00</published><updated>2025-07-27T11:47:08+02:00</updated><id>http://localhost:4000/organization</id><content type="html" xml:base="http://localhost:4000/organization"><![CDATA[<h1 style="text-align: center;">Co-Chairs</h1>
+
+<div class="team-member" style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem;">
+
+
+  <div style="text-align: center; max-width: 200px;">
+    <img src="/assets/aalkaswan-800.webp" alt="Ali" al-kaswan="" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; display: block; margin: 0 auto; transition: box-shadow 0.4s ease; cursor: pointer;" onmouseover="this.style.boxShadow='0 0 12px 3px rgb(149, 64, 246)'" onmouseout="this.style.boxShadow='none'" />
+    <p style="margin: 0.3rem 0 0.5rem 0; font-size: 1rem;">Ali Al-Kaswan</p>
+    <p style="margin: 0.2rem 0 0.5rem 0; font-style: italic; font-size: 0.8rem;">Delft University of Technology - AISE Lab</p>
+    <div style="display: flex; justify-content: center; gap: 10px;">
+      <a href="https://x.com/aalkaswan1" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/twitter.svg" alt="Twitter" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="https://www.linkedin.com/in/aalkaswan/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/linkedin.svg" alt="LinkedIn" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="https://github.com/aalkaswan" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/github.svg" alt="GitHub" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="https://scholar.google.com/citations?user=mtil9QQAAAAJ&amp;hl=nl" aria-label="Google Scholar" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/scholar.svg" alt="Google Scholar" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="https://aalkaswan.github.io/" aria-label="Website" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/website.svg" alt="Website" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="mailto:a.al-kaswan@tudelft.nl" aria-label="Email" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/email.svg" alt="Email" style="width: 20px; height: 20px; cursor: pointer;" />
+      </a>
+    </div>
+  </div>
+
+
+  <div style="text-align: center; max-width: 200px;">
+    <img src="/assets/jkatzy-800.webp" alt="Jonathan" katzy="" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; display: block; margin: 0 auto; transition: box-shadow 0.4s ease; cursor: pointer;" onmouseover="this.style.boxShadow='0 0 12px 3px rgb(149, 64, 246)'" onmouseout="this.style.boxShadow='none'" />
+    <p style="margin: 0.3rem 0 0.5rem 0; font-size: 1rem;">Jonathan Katzy</p>
+    <p style="margin: 0.2rem 0 0.5rem 0; font-style: italic; font-size: 0.8rem;">Delft University of Technology - AISE Lab</p>
+    <div style="display: flex; justify-content: center; gap: 10px;">
+      <a href="https://x.com/katzy_jonathan" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/twitter.svg" alt="Twitter" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="https://www.linkedin.com/in/jonathan-katzy-568263138/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/linkedin.svg" alt="LinkedIn" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="https://github.com/jkatzy" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/github.svg" alt="GitHub" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="https://scholar.google.com/citations?user=mmy9FeIAAAAJ&amp;hl=en" aria-label="Google Scholar" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/scholar.svg" alt="Google Scholar" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="https://jkatzy.nl/" aria-label="Website" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/website.svg" alt="Website" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="mailto:J.B.Katzy@tudelft.nl" aria-label="Email" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/email.svg" alt="Email" style="width: 20px; height: 20px; cursor: pointer;" />
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<h1 style="text-align: center; margin-top: 3rem;">Web Chair</h1>
+
+<div class="team-member" style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem;">
+
+
+  <div style="text-align: center; max-width: 200px;">
+    <img src="/assets/rpopescu-800.webp" alt="Razvan" mihai="" popescu="" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; display: block; margin: 0 auto; transition: box-shadow 0.4s ease; cursor: pointer;" onmouseover="this.style.boxShadow='0 0 12px 3px rgb(149, 64, 246)'" onmouseout="this.style.boxShadow='none'" />
+    <p style="margin: 0.3rem 0 0.5rem 0; font-size: 1rem;">Razvan Mihai Popescu</p>
+    <p style="margin: 0.2rem 0 0.5rem 0; font-style: italic; font-size: 0.8rem;">Delft University of Technology - AISE Lab</p>
+    <div style="display: flex; justify-content: center; gap: 10px;">
+      <a href="https://x.com/razvanmp27" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/twitter.svg" alt="Twitter" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="https://www.linkedin.com/in/razvan-mihai-popescu-b71104211/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/linkedin.svg" alt="LinkedIn" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="https://github.com/Razvain" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/github.svg" alt="GitHub" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="https://scholar.google.com/citations?user=NOQ6ZAkAAAAJ&amp;hl=en" aria-label="Google Scholar" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/scholar.svg" alt="Google Scholar" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="https://razvain.github.io/" aria-label="Website" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/website.svg" alt="Website" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="mailto:R.M.Popescu@tudelft.nl" aria-label="Email" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/email.svg" alt="Email" style="width: 20px; height: 20px; cursor: pointer;" />
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<h1 style="text-align: center; margin-top: 3rem;">Academic Advisors</h1>
+
+<div class="team-member" style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem;">
+
+
+  <div style="text-align: center; max-width: 200px;">
+    <img src="/assets/prof_pic-800.webp" alt="Maliheh" izadi="" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; display: block; margin: 0 auto; transition: box-shadow 0.4s ease; cursor: pointer;" onmouseover="this.style.boxShadow='0 0 12px 3px rgb(149, 64, 246)'" onmouseout="this.style.boxShadow='none'" />
+    <p style="margin: 0.3rem 0 0.5rem 0; font-size: 1rem;">Maliheh Izadi</p>
+    <p style="margin: 0.2rem 0 0.5rem 0; font-style: italic; font-size: 0.8rem;">Delft University of Technology - Head of AISE Lab</p>
+    <div style="display: flex; justify-content: center; gap: 10px;">
+      <a href="https://x.com/MalihehIzadi" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/twitter.svg" alt="Twitter" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="https://www.linkedin.com/in/maliheh-izadi/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/linkedin.svg" alt="LinkedIn" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="https://github.com/MalihehIzadi" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/github.svg" alt="GitHub" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="https://scholar.google.com/citations?user=F2D5RawAAAAJ&amp;hl=en" aria-label="Google Scholar" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/scholar.svg" alt="Google Scholar" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="https://malihehizadi.github.io/" aria-label="Website" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/website.svg" alt="Website" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="mailto:m.izadi@tudelft.nl" aria-label="Email" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/email.svg" alt="Email" style="width: 20px; height: 20px; cursor: pointer;" />
+      </a>
+    </div>
+  </div>
+
+
+<div style="text-align: center; max-width: 180px;">
+<img src="/assets/aise_logo.webp" alt="AISE Lab" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; display: block; margin: 0 auto; transition: box-shadow 0.4s ease; cursor: pointer;" onmouseover="this.style.boxShadow='0 0 12px 3px rgb(149, 64, 246)'" onmouseout="this.style.boxShadow='none'" />
+
+   <p style="margin: 0.3rem 0 0.5rem 0; font-size: 1rem;">AISE Lab</p>
+    <p style="margin: 0.2rem 0 0.5rem 0; font-style: italic; font-size: 0.8rem;">Delft University of Technology</p>
+    <div style="display: flex; justify-content: center; gap: 10px;">
+      <a href="https://x.com/AISE_tudelft" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/twitter.svg" alt="Twitter" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="https://www.linkedin.com/company/aise-tudelft/posts/?feedView=all" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/linkedin.svg" alt="LinkedIn" style="width: 20px; height: 20px;" />
+      </a>
+       <a href="https://github.com/AISE-TUDelft" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/github.svg" alt="GitHub" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="https://huggingface.co/AISE-TUDelft" aria-label="HuggingFace" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/huggingface-2.svg" alt="HuggingFace" style="width: 20px; height: 20px;" />
+      </a>
+      <a href="https://malihehizadi.github.io/aise/" aria-label="Website" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/website.svg" alt="Website" style="width: 20px; height: 20px;" />
+      </a>
+    </div>
+  </div>
+
+</div>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[Co-Chairs]]></summary></entry><entry><title type="html">Pcs</title><link href="http://localhost:4000/pcs" rel="alternate" type="text/html" title="Pcs" /><published>2025-07-27T11:47:08+02:00</published><updated>2025-07-27T11:47:08+02:00</updated><id>http://localhost:4000/pcs</id><content type="html" xml:base="http://localhost:4000/pcs"><![CDATA[<h1 style="text-align: center;">Program Committee Chair</h1>
+
+<div class="team-member" style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-bottom: 2rem;">
+
+ <div style="text-align: center; max-width: 180px;">
+    <img src="/assets/zhouyang.png" alt="Zhou Yang" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; display: block; margin: 0 auto; transition: box-shadow 0.4s ease; cursor: pointer;" onmouseover="this.style.boxShadow='0 0 12px 3px rgb(149, 64, 246)'" onmouseout="this.style.boxShadow='none'" />
+        <p style="margin: 0.3rem 0 0.5rem 0; font-size: 1rem;">Zhou Yang</p>
+    <p style="margin: 0.2rem 0 0.5rem 0; font-style: italic; font-size: 0.8rem;">University of Alberta - Assistant Professor <br /> Fellow @ Amii</p>
+    <div style="display: flex; justify-content: center; gap: 10px;">
+      <a href="https://homepage.zhouyang.me/" aria-label="Website" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/website.svg" alt="" style="width: 20px; height: 20px;" />
+      </a>
+       <a href="https://www.linkedin.com/in/zhou-yang-592b21159/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/linkedin.svg" alt="" style="width: 20px; height: 20px;" />
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<h1 style="text-align: center;">Program Committee</h1>
+
+<div class="team-member" style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem;">
+
+   <div style="text-align: center; max-width: 180px;">
+    <img src="/assets/roham.webp" alt="Roham Koohestani" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; display: block; margin: 0 auto; transition: box-shadow 0.4s ease; cursor: pointer;" onmouseover="this.style.boxShadow='0 0 12px 3px rgb(149, 64, 246)'" onmouseout="this.style.boxShadow='none'" />
+        <p style="margin: 0.3rem 0 0.5rem 0; font-size: 1rem;">Roham Koohestani</p>
+    <p style="margin: 0.2rem 0 0.5rem 0; font-style: italic; font-size: 0.8rem;">Delft University of Technology - AISE Lab</p>
+    <div style="display: flex; justify-content: center; gap: 10px;">
+      <a href="https://rohamkoohestani.com/" aria-label="Website" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/website.svg" alt="" style="width: 20px; height: 20px;" />
+      </a>
+       <a href="https://www.linkedin.com/in/rohamkoohestani" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/linkedin.svg" alt="" style="width: 20px; height: 20px;" />
+      </a>
+    </div>
+  </div>
+
+   <div style="text-align: center; max-width: 180px;">
+    <img src="/assets/ziyou.webp" alt="Ziyou Li" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; display: block; margin: 0 auto; transition: box-shadow 0.4s ease; cursor: pointer;" onmouseover="this.style.boxShadow='0 0 12px 3px rgb(149, 64, 246)'" onmouseout="this.style.boxShadow='none'" />
+        <p style="margin: 0.3rem 0 0.5rem 0; font-size: 1rem;">Ziyou Li</p>
+    <p style="margin: 0.2rem 0 0.5rem 0; font-style: italic; font-size: 0.8rem;">Delft University of Technology - AISE Lab</p>
+    <div style="display: flex; justify-content: center; gap: 10px;">
+      <a href="https://ziyou.li/" aria-label="Website" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/website.svg" alt="" style="width: 20px; height: 20px;" />
+      </a>
+       <a href="https://www.linkedin.com/in/ziyouli/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/linkedin.svg" alt="" style="width: 20px; height: 20px;" />
+      </a>
+    </div>
+  </div>
+
+ <div style="text-align: center; max-width: 180px;">
+    <img src="/assets/daniele.webp" alt="Daniele Cipollone" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; display: block; margin: 0 auto; transition: box-shadow 0.4s ease; cursor: pointer;" onmouseover="this.style.boxShadow='0 0 12px 3px rgb(149, 64, 246)'" onmouseout="this.style.boxShadow='none'" />
+        <p style="margin: 0.3rem 0 0.5rem 0; font-size: 1rem;">Daniele Cipollone</p>
+    <p style="margin: 0.2rem 0 0.5rem 0; font-style: italic; font-size: 0.8rem;">Delft University of Technology - AISE Lab</p>
+    <div style="display: flex; justify-content: center; gap: 10px;">
+      <a href="https://scholar.google.com/citations?user=JWqRtYQAAAAJ&amp;hl=en" aria-label="Google Scholar" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/scholar.svg" alt="" style="width: 20px; height: 20px;" />
+      </a>
+       <a href="https://www.linkedin.com/in/dancip00/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/linkedin.svg" alt="" style="width: 20px; height: 20px;" />
+      </a>
+    </div>
+  </div>
+
+</div>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[Program Committee Chair]]></summary></entry><entry><title type="html">Program</title><link href="http://localhost:4000/program" rel="alternate" type="text/html" title="Program" /><published>2025-07-27T11:47:08+02:00</published><updated>2025-07-27T11:47:08+02:00</updated><id>http://localhost:4000/program</id><content type="html" xml:base="http://localhost:4000/program"><![CDATA[<p>The competition program is available on the <a href="https://conf.researchr.org/home/fse-2026">FSE 2026 website</a>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[The competition program is available on the FSE 2026 website.]]></summary></entry><entry><title type="html">Soon</title><link href="http://localhost:4000/speakers" rel="alternate" type="text/html" title="Soon" /><published>2025-07-27T11:47:08+02:00</published><updated>2025-07-27T11:47:08+02:00</updated><id>http://localhost:4000/speakers</id><content type="html" xml:base="http://localhost:4000/speakers"><![CDATA[]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Soon</title><link href="http://localhost:4000/cfp" rel="alternate" type="text/html" title="Soon" /><published>2025-07-27T11:47:08+02:00</published><updated>2025-07-27T11:47:08+02:00</updated><id>http://localhost:4000/cfp</id><content type="html" xml:base="http://localhost:4000/cfp"><![CDATA[]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[]]></summary></entry></feed>
