@@ -1,8 +1,26 @@
 ---
-layout: page
-title:  Soon
+layout: page2
+title: 
 date:   2025-07-27 11:47:08 +0200
 categories: jekyll update
 permalink: /cfp
 hidden: true 
 ---
+
+#### Submission
+
+**Submission Link:** To be announced.
+
+Each submission must include a report, in a ```two to four page short paper format```. The report must outline the proposed approach. Describe the implementation and rationale behind the approach and present the results on the open test set.
+
+In addition to the report, each submission must be accompanied by a comprehensive replication package that enables the organizing committee to validate the reported results and execute the proposed approach on the held-out test set and model.
+
+Submissions must be written in English and provided as PDF files, adhering to the page limits specified above. Authors are required to prepare their manuscripts using the official ACM Primary Article Template, available from the [ACM Proceedings Template page](https://www.acm.org/publications/proceedings-template). For LaTeX submissions, the ```sigconf``` format should be used together with the ```review``` option to enable line numbering for reviewer reference.
+
+#### Review Procedure
+All submissions will undergo a single-blind peer review process, with three reviewers evaluating each contribution. Based on the assessment quality and constructive feedback provided, participants may be offered an opportunity to revise their report or replication package to address reviewer concerns and strengthen their submission for acceptance consideration. The replication package must be made public after acceptance.
+
+#### Proceedings Inclusion
+Participants will have the option to include their reports in the ACM Digital Library Proceedings, allowing teams to gain additional visibility and academic recognition for their work. To maximize accessibility and inclusivity, competitors are welcome to participate and present their solutions without formally registering for the broader conference and without including their submission in the proceedings. We also allow submissions that apply techniques currently under review or consideration at other venues.
+
+Following the submission deadline and prior to the conference, the organizing committee will prepare a report analyzing all accepted submissions. In this report we list the approaches proposed by the participants, compare their strategies and results. Additionally, the report will document unexplored directions that emerged from the competition, providing open challenges that warrant further investigation. The report will be included in the proceedings.

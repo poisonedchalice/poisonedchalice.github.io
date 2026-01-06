@@ -1,12 +1,13 @@
 ---
-layout: page
-title:  Important Dates
+layout: page2
+title:
 date:   2025-07-27 11:47:08 +0200
 categories: jekyll update
 permalink: /dates
 hidden: true 
 ---
 
+#### Timeline
 - **Submission Deadline:** 17 March 2026 AOE
 - **Initial Notifications/Revisions:** 24 March 2026 AOE
 - **Participants Camera Ready:** 31 March 2026 AOE 

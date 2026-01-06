@@ -7,4 +7,7 @@ permalink: /program
 hidden: true 
 ---
 
+#### Competition Format
+The competition will be held in a half-day hybrid setting. The day will start with a thirty minute opening session where the organizers introduce the competition objectives, the datasets, evaluation metrics and submission guidelines. All submissions will then present their solutions, either in person or remotely, for ten minutes, followed by a five minute Q&A session with the audience to foster meaningful discussion. In the closing session, the results of the held out set will be presented and the winners will be announced.
+
 The competition program is available on the [FSE 2026 website](https://conf.researchr.org/home/fse-2026).
