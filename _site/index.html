@@ -272,10 +272,10 @@
   </div>
     <nav class="site-subnav">
       <a href="/">Home</a>
-      <a href="/program">Program</a>
+      <a href="/info">Info</a>
       <a href="/cfp">Call for Papers</a>
       <a href="/dates">Important Dates</a>
-      <!-- <a href="/speakers">Speakers</a> -->
+      <a href="/program">Program</a>
       <a href="/organization">Organization</a>
       <a href="/pcs">Program Committee</a>
       <!-- <a href="/sponsors">Sponsors</a> -->
@@ -316,16 +316,6 @@
 <p>This competition invites participants to develop and improve techniques for membership inference in LLMs4Code. Given a dataset composed of a mixture of files, some belonging to a target model’s training data and others not, participants will design techniques to classify each file accordingly.</p>
 
 <p>Submissions will be evaluated on accuracy using a held-out test set, and their ability to generalize by evaluating the techniques on a held out test model. Finally, we provide a baseline for the contestant to compare their results to.</p>
-
-<h4 id="baselines">Baselines</h4>
-
-<p>We provide four baseline Membership Inference Attacks (MIAs) as reference implementations: <a href="https://arxiv.org/pdf/1709.01604">Loss</a>, <a href="https://arxiv.org/pdf/2310.16789">MinK%Prob</a>, <a href="https://arxiv.org/pdf/2405.11930">SURP</a>, and <a href="https://arxiv.org/pdf/2407.21248">PAC</a>.</p>
-
-<p>Each baseline applies a distinct technique to infer whether a given sample was part of a model’s training dataset. For detailed explanations of the underlying methods, we refer the reader to the corresponding original publications.</p>
-
-<p>The reference implementations were developed by Cosmin Vasilescu, Ísak Jónsson, and Roham Koohestani as part of the Research Project course (CSE3000) at TU Delft. Each attack extends an abstract MIAttack class. You may reuse this structure or any part of the provided implementations; however, doing so is not mandatory.</p>
-
-<p><strong>GitHub repository: To be announced.</strong></p>
 
 <h4 id="impact">Impact</h4>
 
@@ -383,13 +373,15 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
             </li><li><a class="u-email" href="mailto:j.b.katzy@tudelft.nl">j.b.katzy@tudelft.nl</a></li></ul>
       </div>
 
-      <div class="footer-col footer-col-2">
+      <!-- <div class="footer-col footer-col-2">
         <ul class="socials">
           <li class="s-name">
             Competition socials:
-          </li><li><a href="https://www.twitter.com/poisonedchalicecomp"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">poisonedchalicecomp</span></a></li><!--<li><a href="https://github.com/poisonedchalice"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">poisonedchalice</span></a></li>--><li><a href="https://www.linkedin.com/in/poisonedchalicecomp"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">poisonedchalicecomp</span></a></li></ul>
+          </li><li><a href="https://www.twitter.com/poisonedchalicecomp"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">poisonedchalicecomp</span></a></li><!--<li><a href="https://github.com/poisonedchalice"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">poisonedchalice</span></a></li>-->
+          <!--<li><a href="https://www.linkedin.com/in/poisonedchalicecomp"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">poisonedchalicecomp</span></a></li>-->
+        <!-- </ul> -->
         <!-- <p>Follow us on social media: </p> -->
-      </div>
+      <!-- </div> -->
 
       <!-- <div class="footer-col footer-col-3"><ul class="social-media-list"><li><a href="https://github.com/poisonedchalice"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">poisonedchalice</span></a></li><li><a href="https://www.linkedin.com/in/poisonedchalicecomp"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">poisonedchalicecomp</span></a></li><li><a href="https://www.twitter.com/poisonedchalicecomp"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">poisonedchalicecomp</span></a></li></ul>
 </div> -->

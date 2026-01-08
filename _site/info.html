@@ -7,21 +7,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=VT323&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Soon | Poisoned Chalice Competition 2026</title>
+<title>Info | Poisoned Chalice Competition 2026</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Soon" />
+<meta property="og:title" content="Info" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Follow us on social media:" />
-<meta property="og:description" content="Follow us on social media:" />
-<link rel="canonical" href="http://localhost:4000/speakers" />
-<meta property="og:url" content="http://localhost:4000/speakers" />
+<meta name="description" content="Baselines" />
+<meta property="og:description" content="Baselines" />
+<link rel="canonical" href="http://localhost:4000/info" />
+<meta property="og:url" content="http://localhost:4000/info" />
 <meta property="og:site_name" content="Poisoned Chalice Competition 2026" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-07-27T11:47:08+02:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Soon" />
+<meta property="twitter:title" content="Info" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-27T11:47:08+02:00","datePublished":"2025-07-27T11:47:08+02:00","description":"Follow us on social media:","headline":"Soon","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/speakers"},"url":"http://localhost:4000/speakers"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-27T11:47:08+02:00","datePublished":"2025-07-27T11:47:08+02:00","description":"Baselines","headline":"Info","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/info"},"url":"http://localhost:4000/info"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Poisoned Chalice Competition 2026" /></head>
 <body><header class="site-header" role="banner">
@@ -272,10 +272,10 @@
   </div>
     <nav class="site-subnav">
       <a href="/">Home</a>
-      <a href="/program">Program</a>
+      <a href="/info">Info</a>
       <a href="/cfp">Call for Papers</a>
       <a href="/dates">Important Dates</a>
-      <!-- <a href="/speakers">Speakers</a> -->
+      <a href="/program">Program</a>
       <a href="/organization">Organization</a>
       <a href="/pcs">Program Committee</a>
       <!-- <a href="/sponsors">Sponsors</a> -->
@@ -296,12 +296,34 @@
       <div class="wrapper">
         <article class="post">
 
-  <header class="post-header">
-    <h1 class="post-title">Soon</h1>
-  </header>
-
   <div class="post-content">
-    
+    <h4 id="baselines">Baselines</h4>
+
+<p>We provide four baseline Membership Inference Attacks (MIAs) as reference implementations: <a href="https://arxiv.org/pdf/1709.01604">Loss</a>, <a href="https://arxiv.org/pdf/2310.16789">MinK%Prob</a>, <a href="https://arxiv.org/pdf/2405.11930">SURP</a>, and <a href="https://arxiv.org/pdf/2407.21248">PAC</a>.</p>
+
+<p>Each baseline applies a distinct technique to infer whether a given sample was part of a model’s training dataset. For detailed explanations of the underlying methods, we refer the reader to the corresponding original publications.</p>
+
+<p>The reference implementations were developed by Cosmin Vasilescu, Ísak Jónsson, and Roham Koohestani as part of the Research Project course (CSE3000) at TU Delft. Each attack extends an abstract MIAttack class. You may reuse this structure or any part of the provided implementations; however, doing so is not mandatory.</p>
+
+<p>👉<a href="https://github.com/AISE-TUDelft/PoisonedChalice"><strong>GitHub repository</strong></a>👈</p>
+
+<h4 id="dataset">Dataset</h4>
+
+<p>The dataset was create by sampling <strong>500,000</strong> files from both <a href="https://arxiv.org/pdf/2402.19173">The Stack V2</a> as well as <a href="https://arxiv.org/pdf/2501.09653">The Heap</a>. For these 500,000 files, a BOW model was trained and combined with a logistic regression classifier to identify if a file belongs to the to either the Heap or Stack V2. The final datasets uploaded for the competition are all the files that were miss-classified by this BOW approach. This allows us to remove “easy” samples, which can be identified as either members or non-members based on a temporal shift, such as dates from the future (compared to the creation time of the Stack V2), changed/newly released libraries, or differences in licenses included in code comments. This is similar to the approach presented <a href="https://arxiv.org/pdf/2406.17975">here</a>.</p>
+
+<p>As a result, the provided dataset yields worse performance for all MIAs (compared to a randomly sampled dataset) that we have tested it with, however it also ensures that the attacks are looking at more than only a temporal shift in the data.</p>
+
+<p>The evaluation dataset is also generated in the same way, however it consists of <em>only</em> 5,000 samples for each language.</p>
+
+<h4 id="evaluation">Evaluation</h4>
+
+<p>Participants operate in a white‑box membership inference setting. The target models are open‑weights: their architectures and parameters are fully accessible. Participants may inspect and utilize any information available through the HuggingFace Transformers library, including (but not limited to) model weights, layer outputs and activations, logits, attention maps, and other runtime state.</p>
+
+<p>Participants are permitted to perform arbitrary forward and backward computations on the target model and may leverage any signals derived from these computations, such as intermediate activations, gradients, Hessians, or other parameter‑dependent quantities. Temporary, non‑persisting instrumentation, such as forward or backward hooks, probes, or local copies of weights used for analysis, is allowed.</p>
+
+<p>To assess generalization and robustness, evaluation is performed on a held‑out target model and a held‑out evaluation set that are not accessible during development. Participants may tune and validate their methods on the provided development models and datasets, but final scores are computed exclusively on the unseen model and dataset. You may assume the model is a HuggingFace CausalLM built with Transformers version 4.52.xx running dtype bfloat16 smaller than 7B parameters. The dataset is a HuggingFace dataset similar to the one provided.</p>
+
+<p>Submissions are evaluated using the Area Under the Receiver Operating Characteristic curve (AUC‑ROC). AUC‑ROC is a standard metric for membership inference attacks and is widely used in prior work. We choose AUC‑ROC over metrics such as True Positive Rate at a fixed False Positive Rate (TPR@xFPR) because there is no established consensus on what constitutes an acceptable false‑positive rate in this setting. By integrating performance across all possible decision thresholds, AUC‑ROC provides a threshold‑agnostic and comprehensive measure of attack effectiveness.</p>
 
   </div>
 
@@ -324,13 +346,15 @@
             </li><li><a class="u-email" href="mailto:j.b.katzy@tudelft.nl">j.b.katzy@tudelft.nl</a></li></ul>
       </div>
 
-      <div class="footer-col footer-col-2">
+      <!-- <div class="footer-col footer-col-2">
         <ul class="socials">
           <li class="s-name">
             Competition socials:
-          </li><li><a href="https://www.twitter.com/poisonedchalicecomp"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">poisonedchalicecomp</span></a></li><!--<li><a href="https://github.com/poisonedchalice"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">poisonedchalice</span></a></li>--><li><a href="https://www.linkedin.com/in/poisonedchalicecomp"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">poisonedchalicecomp</span></a></li></ul>
+          </li><li><a href="https://www.twitter.com/poisonedchalicecomp"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">poisonedchalicecomp</span></a></li><!--<li><a href="https://github.com/poisonedchalice"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">poisonedchalice</span></a></li>-->
+          <!--<li><a href="https://www.linkedin.com/in/poisonedchalicecomp"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">poisonedchalicecomp</span></a></li>-->
+        <!-- </ul> -->
         <!-- <p>Follow us on social media: </p> -->
-      </div>
+      <!-- </div> -->
 
       <!-- <div class="footer-col footer-col-3"><ul class="social-media-list"><li><a href="https://github.com/poisonedchalice"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">poisonedchalice</span></a></li><li><a href="https://www.linkedin.com/in/poisonedchalicecomp"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">poisonedchalicecomp</span></a></li><li><a href="https://www.twitter.com/poisonedchalicecomp"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">poisonedchalicecomp</span></a></li></ul>
 </div> -->

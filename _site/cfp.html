@@ -11,8 +11,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Cfp" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Submission" />
-<meta property="og:description" content="Submission" />
+<meta name="description" content="Submission Rules" />
+<meta property="og:description" content="Submission Rules" />
 <link rel="canonical" href="http://localhost:4000/cfp" />
 <meta property="og:url" content="http://localhost:4000/cfp" />
 <meta property="og:site_name" content="Poisoned Chalice Competition 2026" />
@@ -21,7 +21,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Cfp" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-27T11:47:08+02:00","datePublished":"2025-07-27T11:47:08+02:00","description":"Submission","headline":"Cfp","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/cfp"},"url":"http://localhost:4000/cfp"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-27T11:47:08+02:00","datePublished":"2025-07-27T11:47:08+02:00","description":"Submission Rules","headline":"Cfp","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/cfp"},"url":"http://localhost:4000/cfp"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Poisoned Chalice Competition 2026" /></head>
 <body><header class="site-header" role="banner">
@@ -272,10 +272,10 @@
   </div>
     <nav class="site-subnav">
       <a href="/">Home</a>
-      <a href="/program">Program</a>
+      <a href="/info">Info</a>
       <a href="/cfp">Call for Papers</a>
       <a href="/dates">Important Dates</a>
-      <!-- <a href="/speakers">Speakers</a> -->
+      <a href="/program">Program</a>
       <a href="/organization">Organization</a>
       <a href="/pcs">Program Committee</a>
       <!-- <a href="/sponsors">Sponsors</a> -->
@@ -297,7 +297,19 @@
         <article class="post">
 
   <div class="post-content">
-    <h4 id="submission">Submission</h4>
+    <h4 id="submission-rules">Submission Rules</h4>
+
+<p>All submissions must include complete, self‑contained code that allows the organizers to reproduce the reported results on the official evaluation setup. Submissions must be provided as a single compressed archive containing a repository with a clear and well‑organized structure. The repository must include all code necessary to run the attack and generate predictions for the evaluation data.</p>
+
+<p>To ensure reproducibility, each submission must specify its execution environment in one of the following ways. Submissions may either include a Dockerfile that builds a runnable container capable of executing the full evaluation pipeline, or provide a requirements.txt (or equivalent, such as pyproject.toml) that lists all required Python dependencies with explicit version constraints, enabling the code to be run in a clean environment using standard tooling (e.g., pip). Submissions must not rely on undocumented system‑level dependencies.</p>
+
+<p>Each submission must include a README that clearly documents how to set up the environment, run the code, and produce the final outputs used for evaluation. The repository must define a clear entry point (for example, a script or command) that accepts the provided model and dataset as input and produces outputs in the required format. Any configuration files, scripts, or auxiliary assets needed to reproduce the results must be included in the archive.</p>
+
+<p>Submissions will be executed under fixed resource constraints. Each submission must run on one NVIDIA Tesla A100 GPU with 80 GB of memory, 128 GB of system RAM, 16 Cores (Intel Xeon Gold 6448Y) and a maximum wall‑clock runtime of 12 hours. Submissions that exceed these limits, fail to terminate within the allotted time, or require additional computational resources will be disqualified. Participants are responsible for ensuring that their methods fit within these constraints.</p>
+
+<p>Submissions that cannot be executed using the provided instructions, that fail to reproduce the reported results, or that violate the competition rules may be disqualified at the organizers’ discretion.</p>
+
+<h4 id="submission-format">Submission Format</h4>
 
 <p><strong>Submission Link:</strong> To be announced.</p>
 
@@ -336,13 +348,15 @@
             </li><li><a class="u-email" href="mailto:j.b.katzy@tudelft.nl">j.b.katzy@tudelft.nl</a></li></ul>
       </div>
 
-      <div class="footer-col footer-col-2">
+      <!-- <div class="footer-col footer-col-2">
         <ul class="socials">
           <li class="s-name">
             Competition socials:
-          </li><li><a href="https://www.twitter.com/poisonedchalicecomp"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">poisonedchalicecomp</span></a></li><!--<li><a href="https://github.com/poisonedchalice"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">poisonedchalice</span></a></li>--><li><a href="https://www.linkedin.com/in/poisonedchalicecomp"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">poisonedchalicecomp</span></a></li></ul>
+          </li><li><a href="https://www.twitter.com/poisonedchalicecomp"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">poisonedchalicecomp</span></a></li><!--<li><a href="https://github.com/poisonedchalice"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">poisonedchalice</span></a></li>-->
+          <!--<li><a href="https://www.linkedin.com/in/poisonedchalicecomp"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">poisonedchalicecomp</span></a></li>-->
+        <!-- </ul> -->
         <!-- <p>Follow us on social media: </p> -->
-      </div>
+      <!-- </div> -->
 
       <!-- <div class="footer-col footer-col-3"><ul class="social-media-list"><li><a href="https://github.com/poisonedchalice"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">poisonedchalice</span></a></li><li><a href="https://www.linkedin.com/in/poisonedchalicecomp"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">poisonedchalicecomp</span></a></li><li><a href="https://www.twitter.com/poisonedchalicecomp"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">poisonedchalicecomp</span></a></li></ul>
 </div> -->

@@ -7,7 +7,19 @@ permalink: /cfp
 hidden: true 
 ---
 
-#### Submission
+#### Submission Rules 
+
+All submissions must include complete, self‑contained code that allows the organizers to reproduce the reported results on the official evaluation setup. Submissions must be provided as a single compressed archive containing a repository with a clear and well‑organized structure. The repository must include all code necessary to run the attack and generate predictions for the evaluation data.
+
+To ensure reproducibility, each submission must specify its execution environment in one of the following ways. Submissions may either include a Dockerfile that builds a runnable container capable of executing the full evaluation pipeline, or provide a requirements.txt (or equivalent, such as pyproject.toml) that lists all required Python dependencies with explicit version constraints, enabling the code to be run in a clean environment using standard tooling (e.g., pip). Submissions must not rely on undocumented system‑level dependencies.
+
+Each submission must include a README that clearly documents how to set up the environment, run the code, and produce the final outputs used for evaluation. The repository must define a clear entry point (for example, a script or command) that accepts the provided model and dataset as input and produces outputs in the required format. Any configuration files, scripts, or auxiliary assets needed to reproduce the results must be included in the archive.
+
+Submissions will be executed under fixed resource constraints. Each submission must run on one NVIDIA Tesla A100 GPU with 80 GB of memory, 128 GB of system RAM, 16 Cores (Intel Xeon Gold 6448Y) and a maximum wall‑clock runtime of 12 hours. Submissions that exceed these limits, fail to terminate within the allotted time, or require additional computational resources will be disqualified. Participants are responsible for ensuring that their methods fit within these constraints.
+
+Submissions that cannot be executed using the provided instructions, that fail to reproduce the reported results, or that violate the competition rules may be disqualified at the organizers’ discretion.
+
+#### Submission Format
 
 **Submission Link:** To be announced.
 

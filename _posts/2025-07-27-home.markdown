@@ -28,16 +28,6 @@ This competition invites participants to develop and improve techniques for memb
 
 Submissions will be evaluated on accuracy using a held-out test set, and their ability to generalize by evaluating the techniques on a held out test model. Finally, we provide a baseline for the contestant to compare their results to.
 
-#### Baselines
-
-We provide four baseline Membership Inference Attacks (MIAs) as reference implementations: [Loss](https://arxiv.org/pdf/1709.01604), [MinK%Prob](https://arxiv.org/pdf/2310.16789), [SURP](https://arxiv.org/pdf/2405.11930), and [PAC](https://arxiv.org/pdf/2407.21248).
-
-Each baseline applies a distinct technique to infer whether a given sample was part of a model’s training dataset. For detailed explanations of the underlying methods, we refer the reader to the corresponding original publications.
-
-The reference implementations were developed by Cosmin Vasilescu, Ísak Jónsson, and Roham Koohestani as part of the Research Project course (CSE3000) at TU Delft. Each attack extends an abstract MIAttack class. You may reuse this structure or any part of the provided implementations; however, doing so is not mandatory.
-
-**GitHub repository: To be announced.**
-
 #### Impact 
 
 We will use the most generalizable and accurate method from the competition to audit The Heap dataset, to detect and label potential training data overlaps with closed models. This results in a stronger, contamination-free benchmark for the community. The competition will:
