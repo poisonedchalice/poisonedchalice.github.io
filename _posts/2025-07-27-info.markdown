@@ -19,12 +19,13 @@ The reference implementations were developed by Cosmin Vasilescu, Ísak Jónsson
 
 #### Dataset 
 
-The dataset was create by sampling **500,000** files from both [The Stack V2](https://arxiv.org/pdf/2402.19173) as well as [The Heap](https://arxiv.org/pdf/2501.09653). For these 500,000 files, a BOW model was trained and combined with a logistic regression classifier to identify if a file belongs to the to either the Heap or Stack V2. The final datasets uploaded for the competition are all the files that were miss-classified by this BOW approach. This allows us to remove "easy" samples, which can be identified as either members or non-members based on a temporal shift, such as dates from the future (compared to the creation time of the Stack V2), changed/newly released libraries, or differences in licenses included in code comments. This is similar to the approach presented [here](https://arxiv.org/pdf/2406.17975).
+The dataset was create by sampling **500,000** files from both [The Stack V2](https://arxiv.org/pdf/2402.19173) as well as [The Heap](https://arxiv.org/pdf/2501.09653). For these 500,000 files, a BOW model was trained and combined with a logistic regression classifier to identify if a file belongs to either the Heap or Stack V2. The final datasets uploaded for the competition are all the files that were miss-classified by this BOW approach. This allows us to remove "easy" samples, which can be identified as either members or non-members based on a temporal shift, such as dates from the future (compared to the creation time of the Stack V2), changed/newly released libraries, or differences in licenses included in code comments. This is similar to the approach presented [here](https://arxiv.org/pdf/2406.17975).
 
 As a result, the provided dataset yields worse performance for all MIAs (compared to a randomly sampled dataset) that we have tested it with, however it also ensures that the attacks are looking at more than only a temporal shift in the data.
 
 The evaluation dataset is also generated in the same way, however it consists of *only* 5,000 samples for each language.
 
+👉[**HuggingFace Dataset**](https://huggingface.co/datasets/AISE-TUDelft/Poisoned-Chalice)👈
 
 #### Evaluation
 
