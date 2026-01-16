@@ -21,7 +21,7 @@ Submissions that cannot be executed using the provided instructions, that fail t
 
 #### Submission Format
 
-**Submission Link:** To be announced.
+**Submission Link:** https://drive.google.com/drive/folders/1l1WFaHxxO6T8Vv9gUafcsDOvzBPlhJS6?usp=sharing 
 
 Each submission must include a report, in a ```two to four page short paper format```. The report must outline the proposed approach. Describe the implementation and rationale behind the approach and present the results on the open test set.
 
